@@ -97,7 +97,7 @@ export class HeroService {
     return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
       tap((x) =>
         x.length
-          ? this.log(`found heroes matcching "${term}"`)
+          ? this.log(`found heroes matching "${term}"`)
           : this.log(`no heroes matching "${term}"`)
       ),
       catchError(this.handleError<Hero[]>('searchHeroes', []))
